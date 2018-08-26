@@ -71,7 +71,6 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0-rc.3",
     "@babel/core": "^7.0.0-rc.3",
-    "@babel/polyfill": "^7.0.0-rc.3",
     "@babel/preset-env": "^7.0.0-rc.3",
     "@babel/preset-react": "^7.0.0-rc.3",
     "babel-core": "^7.0.0-bridge.0",

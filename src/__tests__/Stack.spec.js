@@ -1,4 +1,3 @@
-import '@babel/polyfill';
 import 'jest-styled-components';
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
