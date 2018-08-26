@@ -15,7 +15,7 @@ module.exports = {
 				[
 					'@babel/env',
 					{
-						target: { node: 6 },
+						targets: { node: 6 },
 						useBuiltIns: 'usage',
 						shippedProposals: true,
 					},
