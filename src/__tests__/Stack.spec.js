@@ -1,7 +1,8 @@
+import '@babel/polyfill';
+import 'jest-styled-components';
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import Stack from '../Stack';
-import 'jest-styled-components';
 
 afterEach(cleanup);
 
