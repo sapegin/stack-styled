@@ -28,8 +28,9 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "start": "styleguidist server",
-    "build": "babel --delete-dir-on-start -d lib/ src/",
+    "build": "babel --delete-dir-on-start --ignore '**/*.spec.js' -d lib/ src/",
     "deploy": "gh-pages -d styleguide-build",
+    "docs": "npm run styleguide:build && npm run deploy",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --cache --fix",
     "pretest": "npm run lint",
@@ -100,10 +101,6 @@
   "lint-staged": {
     "*.{js,md}": [
       "prettier --write",
-      "git add"
-    ],
-    "*.--fix": [
-      "eslint --fix",
       "git add"
     ]
   }

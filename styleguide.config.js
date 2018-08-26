@@ -11,6 +11,9 @@ module.exports = {
 	],
 	require: [path.join(__dirname, 'styleguide/styleguide.js')],
 	getComponentPathLine: () => `import Stack from 'stack-styled'`,
+	ribbon: {
+		url: 'https://github.com/sapegin/stack-styled',
+	},
 	usageMode: 'expand',
 	showSidebar: false,
 	styleguideDir: path.join(__dirname, 'styleguide-build'),
