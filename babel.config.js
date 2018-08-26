@@ -11,17 +11,7 @@ module.exports = {
 	],
 	env: {
 		test: {
-			presets: [
-				[
-					'@babel/env',
-					{
-						targets: { node: 6 },
-						useBuiltIns: 'usage',
-						shippedProposals: true,
-					},
-				],
-				'@babel/react',
-			],
+			presets: ['@babel/env', '@babel/react'],
 		},
 	},
 };
