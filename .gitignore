@@ -1,0 +1,14 @@
+node_modules/
+styleguide-build/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.log
+.eslintcache
+Changelog.md
+lib/
+coverage/
+yarn.lock

@@ -1,0 +1,5 @@
+node_modules/
+styleguide/setup.ts
+styleguide-build/
+lib/
+coverage/*

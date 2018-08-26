@@ -1,0 +1,17 @@
+const path = require('path');
+
+module.exports = {
+	sections: [
+		{
+			content: path.join(__dirname, 'styleguide/Intro.md'),
+		},
+		{
+			components: 'src/[A-Z]*.js',
+		},
+	],
+	require: [path.join(__dirname, 'styleguide/styleguide.js')],
+	getComponentPathLine: () => `import Stack from 'stack-styled'`,
+	usageMode: 'expand',
+	showSidebar: false,
+	styleguideDir: path.join(__dirname, 'styleguide-build'),
+};
