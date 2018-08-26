@@ -83,7 +83,7 @@ Responsive gap (8px, 16px, 32px depending on the viewport width):
 </Stack>
 ```
 
-Accepts Grid Styled’s [spacing props](https://jxnblk.com/grid-styled/Box), like `mt` or `mb`:
+Accepts styled-system [spacing props](http://jxnblk.com/styled-system/table/#core), like `mt` or `mb`:
 
 ```jsx
 <Stack minWidth={100} mt={4} mb={4}>
