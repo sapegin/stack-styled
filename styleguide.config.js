@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+	title: 'Stack Styled: stacking layouts for React',
 	sections: [
 		{
 			content: path.join(__dirname, 'styleguide/Intro.md'),

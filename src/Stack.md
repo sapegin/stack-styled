@@ -105,21 +105,25 @@ You can also use it as a generic CSS Grid component:
 
 _Available props are `alignContent`, `alignItems`, `justifyContent`, `gridGap`, `gridRowGap`, `gridColumnGap`, `gridColumn`, `gridRow`, `gridAutoFlow`, `gridAutoRows`, `gridAutoColumns`, `gridTemplateRows` and `gridTemplateColumns`. See more in [styled-system docs](https://jxnblk.com/styled-system/table)._
 
-One more example:
+Responsive buttons (full width on small screens, horizontally stacked on larger screens):
 
 ```jsx
-const styled = require('styled-components').default;
-const Button = styled.button({
-  padding: '8px 16px',
-  border: 0,
-  borderRadius: '2px',
-  background: 'salmon',
-  color: 'white',
-  fontSize: '1rem'
-});
+const Button = require('../styleguide/Button').default;
 <Stack justifyContent={['', 'start']} gridAutoFlow={['', 'column']}>
   <Button>Drink coffee</Button>
   <Button>Buy pizza</Button>
   <Button>Großes Frühstück essen</Button>
+</Stack>;
+```
+
+More responsive buttons (vertically stacked on small screens, 2×2 grid on larger screens):
+
+```jsx
+const Button = require('../styleguide/Button').default;
+<Stack minWidth={320}>
+  <Button>Buy at LeanPub</Button>
+  <Button>Buy at Amazon</Button>
+  <Button>Buy for Kindle</Button>
+  <Button>Read for free</Button>
 </Stack>;
 ```
