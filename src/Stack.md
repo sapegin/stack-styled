@@ -66,7 +66,7 @@ Miltiline stack:
 Custom gap (32px):
 
 ```jsx
-<Stack gap={4} minWidth={100}>
+<Stack gap={4} minWidth={200}>
   {images.slice(0, 3).map(i => (
     <img key={i} src={i} alt="" style={{ maxWidth: '100%' }} />
   ))}
@@ -76,7 +76,7 @@ Custom gap (32px):
 Responsive gap (8px, 16px, 32px depending on the viewport width):
 
 ```jsx
-<Stack gap={[2, 3, 4]} minWidth={100}>
+<Stack gap={[2, 3, 4]} minWidth={200}>
   {images.slice(0, 3).map(i => (
     <img key={i} src={i} alt="" style={{ maxWidth: '100%' }} />
   ))}
@@ -86,7 +86,7 @@ Responsive gap (8px, 16px, 32px depending on the viewport width):
 Accepts styled-system [spacing props](http://jxnblk.com/styled-system/table/#core), like `mt` or `mb`:
 
 ```jsx
-<Stack minWidth={100} mt={4} mb={4}>
+<Stack minWidth={200} mt={4} mb={4}>
   {images.slice(0, 3).map(i => (
     <img key={i} src={i} alt="" style={{ maxWidth: '100%' }} />
   ))}
@@ -104,3 +104,22 @@ You can also use it as a generic CSS Grid component:
 ```
 
 _Available props are `alignContent`, `alignItems`, `justifyContent`, `gridGap`, `gridRowGap`, `gridColumnGap`, `gridColumn`, `gridRow`, `gridAutoFlow`, `gridAutoRows`, `gridAutoColumns`, `gridTemplateRows` and `gridTemplateColumns`. See more in [styled-system docs](https://jxnblk.com/styled-system/table)._
+
+One more example:
+
+```jsx
+const styled = require('styled-components').default;
+const Button = styled.button({
+  padding: '8px 16px',
+  border: 0,
+  borderRadius: '2px',
+  background: 'salmon',
+  color: 'white',
+  fontSize: '1rem'
+});
+<Stack justifyContent={['', 'start']} gridAutoFlow={['', 'column']}>
+  <Button>Drink coffee</Button>
+  <Button>Buy pizza</Button>
+  <Button>Großes Frühstück essen</Button>
+</Stack>;
+```
