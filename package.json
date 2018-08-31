@@ -69,13 +69,13 @@
     "react-emotion": ">=9"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-rc.3",
-    "@babel/core": "^7.0.0-rc.3",
-    "@babel/preset-env": "^7.0.0-rc.3",
-    "@babel/preset-react": "^7.0.0-rc.3",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.4.2",
-    "babel-loader": "^8.0.0-beta.6",
+    "babel-loader": "^8.0.0",
     "eslint": "^5.4.0",
     "eslint-config-tamia": "^6.0.2",
     "eslint-plugin-react": "^7.11.1",
@@ -87,7 +87,7 @@
     "prettier": "^1.14.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-styleguidist": "^7.2.5",
+    "react-styleguidist": "^7.3.4",
     "react-testing-library": "^5.0.0",
     "styled-components": "^3.4.5",
     "webpack": "^4.17.1"
