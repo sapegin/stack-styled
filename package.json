@@ -19,6 +19,7 @@
     "not dead"
   ],
   "main": "lib/Stack.js",
+  "browser": "esm/Stack.js",
   "files": [
     "lib"
   ],
@@ -28,7 +29,9 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "start": "styleguidist server",
-    "build": "babel --delete-dir-on-start --ignore '**/*.spec.js' -d lib/ src/",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "babel --delete-dir-on-start --ignore '**/*.spec.js' -d esm/ src/",
+    "build:cjs": "babel --delete-dir-on-start --ignore '**/*.spec.js' --env-name cjs -d lib/ src/",
     "deploy": "gh-pages -d styleguide-build",
     "docs": "npm run styleguide:build && npm run deploy",
     "prepublishOnly": "npm run build",

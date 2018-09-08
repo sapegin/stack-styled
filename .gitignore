@@ -10,5 +10,6 @@ Thumbs.db
 .eslintcache
 Changelog.md
 lib/
+esm/
 coverage/
 yarn.lock
