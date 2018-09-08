@@ -1,4 +1,4 @@
-import system from 'system-components';
+import system from '@rebass/components';
 import { style, util } from 'styled-system';
 import PropTypes from 'prop-types';
 

@@ -62,7 +62,7 @@
     "css-in-js"
   ],
   "dependencies": {
-    "system-components": "^3.0.0",
+    "@rebass/components": "^4.0.0-1",
     "styled-system": "^3.0.2"
   },
   "peerDependencies": {
