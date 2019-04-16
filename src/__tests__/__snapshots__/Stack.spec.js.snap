@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`doesn’t leak props to DOM 1`] = `"<div class=\\"sc-bdVaJa kEhfeb\\"></div>"`;
-
 exports[`render a div by default 1`] = `
 .c0 {
   box-sizing: border-box;
