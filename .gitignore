@@ -11,5 +11,6 @@ Thumbs.db
 Changelog.md
 lib/
 esm/
+emotion/
 coverage/
 yarn.lock

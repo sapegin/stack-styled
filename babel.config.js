@@ -4,11 +4,11 @@ module.exports = {
 			'@babel/env',
 			{
 				modules: false,
-				useBuiltIns: 'usage',
-				shippedProposals: true,
 			},
 		],
+		'@babel/react',
 	],
+	plugins: ['babel-plugin-styled-components'],
 	env: {
 		test: {
 			presets: ['@babel/env', '@babel/react'],
@@ -21,8 +21,17 @@ module.exports = {
 						targets: {
 							node: 6,
 						},
-						useBuiltIns: 'usage',
-						shippedProposals: true,
+					},
+				],
+			],
+		},
+		emotion: {
+			plugins: [
+				[
+					'transform-rename-import',
+					{
+						original: '^styled-components$',
+						replacement: '@emotion/styled',
 					},
 				],
 			],

@@ -4,7 +4,7 @@ const Button = styled.button`
 	padding: 8px 16px;
 	border: 0;
 	border-radius: 2px;
-	background: salmon;
+	background: #cd009b;
 	color: white;
 	font-size: 1rem;
 	cursor: pointer;
@@ -12,7 +12,7 @@ const Button = styled.button`
 	&:hover,
 	&:active,
 	&:focus {
-		background: tomato;
+		background: #f249cc;
 	}
 `;
 

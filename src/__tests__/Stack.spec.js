@@ -14,7 +14,7 @@ test('render a div by default', () => {
 
 test('render a custom tag', () => {
 	const { getByTestId } = render(
-		<Stack is="header" data-testid="container">
+		<Stack as="header" data-testid="container">
 			hello
 		</Stack>
 	);
@@ -62,10 +62,11 @@ test('CSS grip props', () => {
 	expect(firstChild).toHaveStyleRule('align-items', 'center');
 });
 
-// https://github.com/jxnblk/styled-system/pull/274
-test.skip('doesn’t leak props to DOM', () => {
+test('doesn’t leak props to DOM', () => {
 	const {
 		container: { firstChild },
 	} = render(<Stack gap={5} minWidth={100} m={2} alignItems="center" />);
-	expect(firstChild.outerHTML).toMatchSnapshot();
+	expect(firstChild.outerHTML).toMatchInlineSnapshot(
+		`"<div class=\\"sc-bdVaJa ceSefn\\"></div>"`
+	);
 });
