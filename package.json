@@ -43,8 +43,7 @@
     "test:jest": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "format": "prettier --write '**/*.{js,md}'",
-    "precommit": "lint-staged"
+    "format": "prettier --write '**/*.{js,md}'"
   },
   "keywords": [
     "white",
@@ -105,9 +104,19 @@
     ]
   },
   "lint-staged": {
-    "*.{js,md}": [
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
       "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
