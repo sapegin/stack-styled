@@ -1,6 +1,6 @@
 import 'jest-styled-components';
 import React from 'react';
-import { render, cleanup } from 'react-testing-library';
+import { render, cleanup } from '@testing-library/react';
 import Stack from '../Stack';
 
 afterEach(cleanup);
@@ -67,6 +67,6 @@ test('doesn’t leak props to DOM', () => {
 		container: { firstChild },
 	} = render(<Stack gap={5} minWidth={100} m={2} alignItems="center" />);
 	expect(firstChild.outerHTML).toMatchInlineSnapshot(
-		`"<div class=\\"sc-bdVaJa jGLRHV\\"></div>"`
+		`"<div class=\\"sc-bdVaJa dvatyS\\"></div>"`
 	);
 });
