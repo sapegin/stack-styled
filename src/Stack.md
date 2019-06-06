@@ -76,7 +76,7 @@ Responsive gap (8px, 16px, 32px depending on the viewport width):
 </Stack>
 ```
 
-Accepts styled-system [spacing props](https://styled-system.com/table#core), like `mt` or `mb`:
+Accepts styled-system [spacing props](https://styled-system.com/table#space), like `mt` or `mb`:
 
 ```jsx
 <Stack minWidth={200} mt={4} mb={4}>
@@ -96,7 +96,7 @@ You can also use it as a generic CSS Grid component:
 </Stack>
 ```
 
-_Available props are `alignContent`, `alignItems`, `justifyContent`, `gridGap`, `gridRowGap`, `gridColumnGap`, `gridColumn`, `gridRow`, `gridAutoFlow`, `gridAutoRows`, `gridAutoColumns`, `gridTemplateRows` and `gridTemplateColumns`. See more in [styled-system docs](https://styled-system.com/table)._
+_Available props are `alignContent`, `alignItems`, `justifyContent`, `gridGap`, `gridRowGap`, `gridColumnGap`, `gridColumn`, `gridRow`, `gridAutoFlow`, `gridAutoRows`, `gridAutoColumns`, `gridTemplateRows` and `gridTemplateColumns`. See more in [styled-system docs](https://styled-system.com/table#grid-layout)._
 
 Responsive buttons (full width on small screens, horizontally stacked on larger screens):
 

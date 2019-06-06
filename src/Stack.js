@@ -1,31 +1,15 @@
 import styled from 'styled-components';
-import {
-	width,
-	space,
-	alignContent,
-	alignItems,
-	justifyContent,
-	gridGap,
-	gridRowGap,
-	gridColumnGap,
-	gridColumn,
-	gridRow,
-	gridAutoFlow,
-	gridAutoRows,
-	gridAutoColumns,
-	gridTemplateRows,
-	gridTemplateColumns,
-	style,
-	getPx,
-} from 'styled-system';
+import { space, layout, flexbox, grid, style } from 'styled-system';
+import propTypes, { propType } from '@styled-system/prop-types';
 
 const DEFAULT_SCALE = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+
+const getPx = value => (typeof value === 'number' ? `${value}px` : value);
 
 const gap = style({
 	prop: 'gap',
 	cssProperty: 'gridGap',
 	key: 'space',
-	transformValue: getPx,
 	scale: DEFAULT_SCALE,
 });
 
@@ -46,21 +30,10 @@ const Stack = styled('div')(
 	},
 	gap,
 	minWidth,
-	width,
 	space,
-	alignContent,
-	alignItems,
-	justifyContent,
-	gridGap,
-	gridRowGap,
-	gridColumnGap,
-	gridColumn,
-	gridRow,
-	gridAutoFlow,
-	gridAutoRows,
-	gridAutoColumns,
-	gridTemplateRows,
-	gridTemplateColumns
+	layout,
+	flexbox,
+	grid
 );
 
 Stack.displayName = 'Stack';
@@ -70,23 +43,12 @@ Stack.defaultProps = {
 };
 
 Stack.propTypes = {
-	...gap.propTypes,
-	...minWidth.propTypes,
-	...width.propTypes,
-	...space.propTypes,
-	...alignContent.propTypes,
-	...alignItems.propTypes,
-	...justifyContent.propTypes,
-	...gridGap.propTypes,
-	...gridRowGap.propTypes,
-	...gridColumnGap.propTypes,
-	...gridColumn.propTypes,
-	...gridRow.propTypes,
-	...gridAutoFlow.propTypes,
-	...gridAutoRows.propTypes,
-	...gridAutoColumns.propTypes,
-	...gridTemplateRows.propTypes,
-	...gridTemplateColumns.propTypes,
+	gap: propType,
+	minWidth: propType,
+	...propTypes.space,
+	...propTypes.layout,
+	...propTypes.flexbox,
+	...propTypes.grid,
 };
 
 /** @component */
