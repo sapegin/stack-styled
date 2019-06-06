@@ -14,6 +14,10 @@ const Stack = styled('div')(
 		boxSizing: 'border-box',
 		display: 'grid',
 	},
+	space,
+	layout,
+	flexbox,
+	grid,
 	system({
 		gap: {
 			property: 'gridGap',
@@ -24,11 +28,7 @@ const Stack = styled('div')(
 			property: 'gridTemplateColumns',
 			transform: n => (n ? `repeat(auto-fit, minmax(${getPx(n)}, 1fr))` : null),
 		},
-	}),
-	space,
-	layout,
-	flexbox,
-	grid
+	})
 );
 
 Stack.displayName = 'Stack';
