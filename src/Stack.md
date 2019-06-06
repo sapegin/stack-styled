@@ -44,7 +44,7 @@ Vertical stack (default):
 </Stack>
 ```
 
-Miltiline stack:
+Multiline stack:
 
 ```jsx
 <Stack minWidth={200}>
