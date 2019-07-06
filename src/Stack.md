@@ -5,7 +5,7 @@ import Props from 'react-styleguidist/lib/client/rsg-components/Props';
 <Props
   props={[
     {
-      name: 'gap',
+      name: 'gridGap',
       type: {
         name: 'union',
         value: [
@@ -13,14 +13,34 @@ import Props from 'react-styleguidist/lib/client/rsg-components/Props';
           { name: 'arrayOf', value: { name: 'number' } }
         ]
       },
-      defaultValue: { value: '2' },
-      description:
-        'Gap between children. Default: 8px, see the scale below'
+      description: 'Gap between children'
     },
     {
-      name: 'minWidth',
+      name: 'gridRowGap',
+      type: {
+        name: 'union',
+        value: [
+          { name: 'number' },
+          { name: 'arrayOf', value: { name: 'number' } }
+        ]
+      },
+      description: 'Gap between rows'
+    },
+    {
+      name: 'gridColumnGap',
+      type: {
+        name: 'union',
+        value: [
+          { name: 'number' },
+          { name: 'arrayOf', value: { name: 'number' } }
+        ]
+      },
+      description: 'Gap between columns'
+    },
+    {
+      name: 'minColumnWidth',
       type: { name: 'number' },
-      description: 'Minimum width of a child'
+      description: 'Minimum width of a column'
     }
   ]}
 />;
@@ -34,10 +54,10 @@ import Props from 'react-styleguidist/lib/client/rsg-components/Props';
 
 ### Examples
 
-Vertical stack (default):
+Vertical stack (default) with 8px gap:
 
 ```jsx
-<Stack>
+<Stack gridGap={2}>
   <Box bg="#F99BE4" height={32} />
   <Box bg="#F249CC" height={32} />
   <Box bg="#CD009B" height={32} />
@@ -47,39 +67,29 @@ Vertical stack (default):
 Multiline stack:
 
 ```jsx
-<Stack minWidth={200}>
+<Stack gridGap={3} minColumnWidth={200}>
   {images.map(i => (
     <Image key={i} src={i} alt="" />
   ))}
 </Stack>
 ```
 
-Custom gap (32px):
-
-```jsx
-<Stack gap={4} minWidth={200}>
-  {images.slice(0, 3).map(i => (
-    <Image key={i} src={i} alt="" />
-  ))}
-</Stack>
-```
-
-_`gap` is an alias for `gridGap` prop. You can also use `gridRowGap` and `gridColumnGap` props._
-
 Responsive gap (8px, 16px, 32px depending on the viewport width):
 
 ```jsx
-<Stack gap={[2, 3, 4]} minWidth={200}>
+<Stack gridGap={[2, 3, 4]} minColumnWidth={200}>
   {images.slice(0, 3).map(i => (
     <Image key={i} src={i} alt="" />
   ))}
 </Stack>
 ```
+
+_You can also use `gridRowGap` and `gridColumnGap` props._
 
 Accepts styled-system [spacing props](https://styled-system.com/table#space), like `mt` or `mb`:
 
 ```jsx
-<Stack minWidth={200} mt={4} mb={4}>
+<Stack gridGap={2} minColumnWidth={200} mt={4} mb={4}>
   {images.slice(0, 3).map(i => (
     <Image key={i} src={i} alt="" />
   ))}
@@ -89,19 +99,27 @@ Accepts styled-system [spacing props](https://styled-system.com/table#space), li
 You can also use it as a generic CSS Grid component:
 
 ```jsx
-<Stack gridTemplateColumns="1fr 2fr 1fr" alignItems="center">
+<Stack
+  gridGap={2}
+  gridTemplateColumns="1fr 2fr 1fr"
+  alignItems="center"
+>
   {images.slice(0, 3).map(i => (
     <Image key={i} src={i} alt="" />
   ))}
 </Stack>
 ```
 
-_Available props are `alignContent`, `alignItems`, `justifyContent`, `gridGap`, `gridRowGap`, `gridColumnGap`, `gridColumn`, `gridRow`, `gridAutoFlow`, `gridAutoRows`, `gridAutoColumns`, `gridTemplateRows` and `gridTemplateColumns`. See more in [styled-system docs](https://styled-system.com/table#grid-layout)._
+\_All styled-system’s [Space](https://styled-system.com/table/#space), [Layout](https://styled-system.com/table/#layout), [Flexbox](https://styled-system.com/table/#flexbox) and [Grid Layout](https://styled-system.com/table/#grid-layout) props are available.
 
 Responsive buttons (full width on small screens, horizontally stacked on larger screens):
 
 ```jsx
-<Stack justifyContent={['', 'start']} gridAutoFlow={['', 'column']}>
+<Stack
+  gridGap={2}
+  justifyContent={['', 'start']}
+  gridAutoFlow={['', 'column']}
+>
   <Button>Drink coffee</Button>
   <Button>Buy pizza</Button>
   <Button>Großes Frühstück essen</Button>
@@ -111,7 +129,7 @@ Responsive buttons (full width on small screens, horizontally stacked on larger 
 More responsive buttons (vertically stacked on small screens, 2×2 grid on larger screens):
 
 ```jsx
-<Stack minWidth={320}>
+<Stack gridGap={2} minColumnWidth={320}>
   <Button>Buy at LeanPub</Button>
   <Button>Buy at Amazon</Button>
   <Button>Buy for Kindle</Button>
@@ -122,11 +140,14 @@ More responsive buttons (vertically stacked on small screens, 2×2 grid on large
 Medium-style [article layout](http://gedd.ski/post/article-grid-layout/):
 
 ```jsx
-<Stack gridTemplateColumns="minmax(16px, 1fr) minmax(auto, 57ch) minmax(16px, 1fr)">
-  <Stack gridColumn="1/4">
+<Stack
+  gridGap={2}
+  gridTemplateColumns="minmax(16px, 1fr) minmax(auto, 57ch) minmax(16px, 1fr)"
+>
+  <Stack gridGap={2} gridColumn="1/4">
     <Image src={images[1]} alt="" />
   </Stack>
-  <Stack gridColumn="2">
+  <Stack gridGap={2} gridColumn="2">
     <Heading>Down the Rabbit Hole</Heading>
     <Para>
       Alice was beginning to get very tired of sitting by her sister

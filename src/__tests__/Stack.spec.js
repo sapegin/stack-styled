@@ -6,10 +6,8 @@ import Stack from '../Stack';
 afterEach(cleanup);
 
 test('render a div by default', () => {
-	const {
-		container: { firstChild },
-	} = render(<Stack>hello</Stack>);
-	expect(firstChild).toMatchSnapshot();
+	const { getByTestId } = render(<Stack data-testid="container">hello</Stack>);
+	expect(getByTestId('container')).toHaveProperty('tagName', 'DIV');
 });
 
 test('render a custom tag', () => {
@@ -24,14 +22,14 @@ test('render a custom tag', () => {
 test('custom gap', () => {
 	const {
 		container: { firstChild },
-	} = render(<Stack gap={4}>hello</Stack>);
+	} = render(<Stack gridGap={4}>hello</Stack>);
 	expect(firstChild).toHaveStyleRule('grid-gap', '32px');
 });
 
 test('custom min width', () => {
 	const {
 		container: { firstChild },
-	} = render(<Stack minWidth={100}>hello</Stack>);
+	} = render(<Stack minColumnWidth={100}>hello</Stack>);
 	expect(firstChild).toHaveStyleRule(
 		'grid-template-columns',
 		'repeat(auto-fit,minmax(100px,1fr))'
@@ -65,8 +63,8 @@ test('CSS grip props', () => {
 test('doesn’t leak props to DOM', () => {
 	const {
 		container: { firstChild },
-	} = render(<Stack gap={5} minWidth={100} m={2} alignItems="center" />);
+	} = render(<Stack gap={5} minColumnWidth={100} m={2} alignItems="center" />);
 	expect(firstChild.outerHTML).toMatchInlineSnapshot(
-		`"<div class=\\"sc-bdVaJa kDqvGs\\"></div>"`
+		`"<div class=\\"sc-bdVaJa liOMNz\\"></div>"`
 	);
 });
