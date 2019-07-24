@@ -2,13 +2,10 @@ import styled from 'styled-components';
 import { space, layout, flexbox, grid, system } from 'styled-system';
 import propTypes, { propType } from '@styled-system/prop-types';
 
-const DEFAULT_SCALE = [0, 4, 8, 16, 32, 64, 128, 256, 512];
+const px = value => (typeof value === 'number' ? `${value}px` : value);
 
-const getPx = value => (typeof value === 'number' ? `${value}px` : value);
+const getMinMaxValue = (value, scale = []) => px(scale[value] || value);
 
-/**
- * @visibleName Stack Styled
- */
 const Stack = styled('div')(
 	{
 		boxSizing: 'border-box',
@@ -19,23 +16,18 @@ const Stack = styled('div')(
 	flexbox,
 	grid,
 	system({
-		gap: {
-			property: 'gridGap',
-			scale: 'space',
-			defaultScale: DEFAULT_SCALE,
-		},
-		minWidth: {
+		minColumnWidth: {
 			property: 'gridTemplateColumns',
-			transform: n => (n ? `repeat(auto-fit, minmax(${getPx(n)}, 1fr))` : null),
+			scale: 'space',
+			transform: (value, scale) =>
+				value
+					? `repeat(auto-fit, minmax(${getMinMaxValue(value, scale)}, 1fr))`
+					: null,
 		},
 	})
 );
 
 Stack.displayName = 'Stack';
-
-Stack.defaultProps = {
-	gap: 2,
-};
 
 Stack.propTypes = {
 	gap: propType,
