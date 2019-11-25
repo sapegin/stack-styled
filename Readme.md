@@ -1,6 +1,6 @@
 # Stack Styled
 
-[![Build Status](https://travis-ci.org/sapegin/stack-styled.svg)](https://travis-ci.org/sapegin/stack-styled)
+[![Build Status](https://travis-ci.org/sapegin/stack-styled.svg)](https://travis-ci.org/sapegin/stack-styled) [![npm](https://img.shields.io/npm/v/stack-styled.svg)](https://www.npmjs.com/package/stack-styled)
 
 React component to make stack layouts easy: adds whitespace horizontal and vertical whitespace between each child element but not around the container. Based on [styled-system](https://styled-system.com/) and CSS Grid. We recommend to use this component with [Rebass Grid](https://rebassjs.org/grid/).
 
