@@ -65,6 +65,6 @@ test('doesn’t leak props to DOM', () => {
 		container: { firstChild },
 	} = render(<Stack gap={5} minColumnWidth={100} m={2} alignItems="center" />);
 	expect(firstChild.outerHTML).toMatchInlineSnapshot(
-		`"<div class=\\"sc-bdVaJa liOMNz\\"></div>"`
+		`"<div class=\\"Stack-zgfnkm-0 fXdsfR\\"></div>"`
 	);
 });

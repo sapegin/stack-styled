@@ -1,0 +1,9 @@
+{
+  "extends": "tamia/react",
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "extends": "tamia/typescript-react"
+    }
+  ]
+}

@@ -4,12 +4,18 @@ import Heading from './Heading';
 import Image from './Image';
 import Para from './Para';
 
+// @ts-ignore
 global.Box = Box;
+// @ts-ignore
 global.Button = Button;
+// @ts-ignore
 global.Heading = Heading;
+// @ts-ignore
 global.Image = Image;
+// @ts-ignore
 global.Para = Para;
 
+// @ts-ignore
 global.images = [
 	'https://images.unsplash.com/photo-1481099218264-74ca322f4f67?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dda119125130d5d5cef73ba28afc40b4&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb',
 	'https://images.unsplash.com/photo-1481703443304-97302c668171?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c772d02c66eb928bb45a618cf7356594&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb',

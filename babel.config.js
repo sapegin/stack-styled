@@ -1,5 +1,6 @@
 module.exports = {
 	presets: [
+		'@babel/typescript',
 		[
 			'@babel/env',
 			{
@@ -11,10 +12,11 @@ module.exports = {
 	plugins: ['babel-plugin-styled-components'],
 	env: {
 		test: {
-			presets: ['@babel/env', '@babel/react'],
+			presets: ['@babel/typescript', '@babel/env', '@babel/react'],
 		},
 		cjs: {
 			presets: [
+				'@babel/typescript',
 				[
 					'@babel/env',
 					{
