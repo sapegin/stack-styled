@@ -20,10 +20,12 @@
   ],
   "main": "lib/Stack.js",
   "browser": "esm/Stack.js",
+  "types": "types/Stack.d.ts",
   "files": [
     "lib",
     "esm",
-    "emotion"
+    "emotion",
+    "types"
   ],
   "scripts": {
     "pretest": "npm run lint && npm run typecheck",

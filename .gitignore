@@ -13,4 +13,5 @@ lib/
 esm/
 emotion/
 coverage/
+types/
 yarn.lock

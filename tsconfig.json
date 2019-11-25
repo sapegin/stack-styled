@@ -4,17 +4,17 @@
     "module": "es2015",
     "jsx": "react",
     "moduleResolution": "node",
-    "noEmit": true,
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "types",
     "types": [
       "node",
       "react"
     ]
   },
   "include": [
-    "src",
-    "styleguide"
+    "src"
   ]
 }
