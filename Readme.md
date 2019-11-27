@@ -12,7 +12,7 @@ npm install stack-styled
 
 ## Documentation & examples
 
-[See documentation & examples](https://sapegin.github.io/stack-styled/).
+[See documentation & examples](https://stack-styled.js.org/).
 
 ## Change log
 
