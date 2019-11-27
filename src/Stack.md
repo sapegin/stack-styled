@@ -1,4 +1,4 @@
-_All props except `minColumnWidth` are coming from styled._
+_All props except `minColumnWidth` and `numColumns` are coming from styled._
 
 ### Default scale
 
@@ -33,6 +33,16 @@ Responsive gap (8px, 16px, 32px depending on the viewport width):
 ```jsx
 <Stack gridGap={[2, 3, 4]} minColumnWidth={200}>
   {images.slice(0, 3).map(i => (
+    <Image key={i} src={i} alt="" />
+  ))}
+</Stack>
+```
+
+Responsive column layout:
+
+```jsx
+<Stack gridGap={3} numColumns={[1, 2, 3]}>
+  {images.map(i => (
     <Image key={i} src={i} alt="" />
   ))}
 </Stack>

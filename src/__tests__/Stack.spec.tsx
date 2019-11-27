@@ -24,7 +24,7 @@ test('custom gap', () => {
 	expect(firstChild).toHaveStyleRule('grid-gap', '32px');
 });
 
-test('custom min width', () => {
+test('custom min column width', () => {
 	const {
 		container: { firstChild },
 	} = render(<Stack minColumnWidth={100}>hello</Stack>);
@@ -32,6 +32,13 @@ test('custom min width', () => {
 		'grid-template-columns',
 		'repeat(auto-fit,minmax(100px,1fr))'
 	);
+});
+
+test('custom number of columns', () => {
+	const {
+		container: { firstChild },
+	} = render(<Stack numColumns={3}>hello</Stack>);
+	expect(firstChild).toHaveStyleRule('grid-template-columns', 'repeat(3,1fr)');
 });
 
 test('spacing props', () => {

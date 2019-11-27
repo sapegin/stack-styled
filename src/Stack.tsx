@@ -31,8 +31,16 @@ type Props = SpaceProps &
 	BorderProps &
 	ShadowProps &
 	PositionProps & {
-		/** Minimum width of a child, will create responsive CSS Grid layout like `grid-template-columns: repeat(auto-fit, minmax($minColumnWidth$)}, 1fr))` */
+		/** Minimum width of a child, will create responsive CSS Grid layout like
+		 * `grid-template-columns: repeat(auto-fit, minmax($minColumnWidth$)}, 1fr))`.
+		 * (You can use either this prop or `numColumns` but not both.)
+		 */
 		minColumnWidth?: ResponsiveValue<TLengthStyledSystem>;
+		/** Number of columns, will create a responsive CSS Grid layout like
+		 * `grid-template-columns: repeat($numColumns$, 1fr))`.
+		 * (You can use either this prop or `minColumnWidth` but not both.)
+		 */
+		numColumns?: ResponsiveValue<number>;
 	};
 
 const px = (value: TLengthStyledSystem): string =>
@@ -67,6 +75,10 @@ export const Stack = styled('div')<Props>(
 							scale as TLengthStyledSystem[]
 					  )}, 1fr))`
 					: null,
+		},
+		numColumns: {
+			property: 'gridTemplateColumns',
+			transform: value => (value ? `repeat(${value}, 1fr)` : null),
 		},
 	})
 );
