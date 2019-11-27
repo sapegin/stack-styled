@@ -1,9 +1,7 @@
 import 'jest-styled-components';
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Stack from '../Stack';
-
-afterEach(cleanup);
 
 test('render a div by default', () => {
 	const { getByTestId } = render(<Stack data-testid="container">hello</Stack>);
@@ -61,10 +59,10 @@ test('CSS grip props', () => {
 });
 
 test('doesn’t leak props to DOM', () => {
-	const {
-		container: { firstChild },
-	} = render(<Stack gap={5} minColumnWidth={100} m={2} alignItems="center" />);
-	expect(firstChild.outerHTML).toMatchInlineSnapshot(
-		`"<div class=\\"Stack-zgfnkm-0 fXdsfR\\"></div>"`
+	const { container } = render(
+		<Stack gridGap={5} minColumnWidth={100} m={2} alignItems="center" />
+	);
+	expect(container.innerHTML).toMatchInlineSnapshot(
+		`"<div class=\\"Stack-zgfnkm-0 fSmwnm\\"></div>"`
 	);
 });
