@@ -22,6 +22,12 @@ The change log can be found on the [Releases page](https://github.com/sapegin/st
 
 Everyone is welcome to contribute. Please take a moment to review the [contributing guidelines](Contributing.md).
 
+## Sponsoring
+
+This software has been developed with lots of coffee, buy me one more cup to keep it going.
+
+<a href="https://www.buymeacoffee.com/sapegin" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-orange.png" alt="Buy Me A Coffee" height="51" width="217" ></a>
+
 ## Authors and license
 
 [Artem Sapegin](http://sapegin.me) and [contributors](https://github.com/sapegin/stack-styled/graphs/contributors).
