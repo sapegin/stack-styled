@@ -70,6 +70,6 @@ test('doesn’t leak props to DOM', () => {
 		<Stack gridGap={5} minColumnWidth={100} m={2} alignItems="center" />
 	);
 	expect(container.innerHTML).toMatchInlineSnapshot(
-		`"<div class=\\"Stack-zgfnkm-0 fSmwnm\\"></div>"`
+		`"<div class=\\"sc-bdnylx cTKgxJ\\"></div>"`
 	);
 });
