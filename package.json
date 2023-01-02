@@ -101,7 +101,7 @@
     "react-styleguidist": "^13.0.0",
     "styled-components": "^5.2.0",
     "typescript": "^3.9.7",
-    "webpack": "^4.44.1"
+    "webpack": "^5.75.0"
   },
   "jest": {
     "testPathIgnorePatterns": [
